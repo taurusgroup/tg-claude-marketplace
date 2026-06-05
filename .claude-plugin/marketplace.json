@@ -29,7 +29,7 @@
     {
       "name": "code-review",
       "description": "Automated PR review workflow with parallel review agents. Vendored from anthropics/claude-plugins-official and pinned for review.",
-      "version": "0.0.0+sha.bd7cf41fc8a4",
+      "version": "v2026-06-04+bd7cf41fc8a4",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
@@ -40,7 +40,7 @@
     {
       "name": "feature-dev",
       "description": "Guided feature-development workflow (code-explorer, code-architect, code-reviewer agents). Vendored from anthropics/claude-plugins-official and pinned for review.",
-      "version": "0.0.0+sha.bd7cf41fc8a4",
+      "version": "v2026-06-04+bd7cf41fc8a4",
       "author": {
         "name": "Anthropic",
         "email": "support@anthropic.com"
