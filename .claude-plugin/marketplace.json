@@ -1,0 +1,29 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "taurus-approved",
+  "description": "Taurus SA approved Claude Code plugins. Only plugins listed here are installable under managed policy.",
+  "owner": {
+    "name": "Taurus SA Engineering"
+  },
+  "plugins": [
+    {
+      "name": "gopls-lsp",
+      "description": "Go language server for code intelligence and refactoring. Vendored from anthropics/claude-plugins-official and pinned for review.",
+      "version": "1.0.0",
+      "category": "development",
+      "source": "./plugins/gopls-lsp"
+    },
+    {
+      "name": "code-review",
+      "description": "Automated PR review workflow with parallel review agents. Vendored from anthropics/claude-plugins-official and pinned for review.",
+      "category": "development",
+      "source": "./plugins/code-review"
+    },
+    {
+      "name": "feature-dev",
+      "description": "Guided feature-development workflow (code-explorer, code-architect, code-reviewer agents). Vendored from anthropics/claude-plugins-official and pinned for review.",
+      "category": "development",
+      "source": "./plugins/feature-dev"
+    }
+  ]
+}
