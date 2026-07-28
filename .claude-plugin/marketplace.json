@@ -47,6 +47,13 @@
       },
       "category": "development",
       "source": "./plugins/feature-dev"
+    },
+    {
+      "name": "protect",
+      "displayName": "Taurus-PROTECT",
+      "description": "Local per-developer daemon exposing Taurus-PROTECT over MCP.",
+      "category": "development",
+      "source": "./plugins/protect"
     }
   ]
 }
