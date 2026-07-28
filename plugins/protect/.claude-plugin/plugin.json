@@ -8,8 +8,7 @@
       "type": "string",
       "title": "Taurus-PROTECT MCP endpoint",
       "description": "Leave as-is for local DEV. INT is set centrally.",
-      "default": "http://localhost:8090/mcp",
-      "required": true
+      "default": "http://localhost:8090/mcp"
     }
   }
 }
