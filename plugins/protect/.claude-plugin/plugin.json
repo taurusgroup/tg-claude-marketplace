@@ -1,0 +1,15 @@
+{
+  "name": "protect",
+  "displayName": "Taurus-PROTECT",
+  "version": "0.1.0",
+  "description": "Local per-developer daemon exposing Taurus-PROTECT over MCP.",
+  "userConfig": {
+    "endpoint": {
+      "type": "string",
+      "title": "Taurus-PROTECT MCP endpoint",
+      "description": "Leave as-is for local DEV. INT is set centrally.",
+      "default": "http://localhost:8090/mcp",
+      "required": true
+    }
+  }
+}
