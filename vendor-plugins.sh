@@ -27,9 +27,10 @@
 #   ./vendor-plugins.sh [REF] [--dry-run] [--prune]
 #     REF         branch, tag, or commit SHA to pin (default: main)
 #     --dry-run   show what would change; touch nothing
-#     --prune     remove catalog entries AND vendored folders not in PLUGINS
-#                 (vendored folders = those carrying a .vendor.json; hand-authored
-#                  folders without one are left in place). Combine with --dry-run first.
+#     --prune     remove catalog entries AND vendored folders not in PLUGINS.
+#                 "Vendored" means carrying a .vendor.json; hand-authored plugins
+#                 without one keep both their folder and their catalog entry.
+#                 Combine with --dry-run first.
 #
 # Env:
 #   VENDOR_UPSTREAM   override the upstream repo URL (e.g. an internal mirror)
@@ -204,6 +205,15 @@ function reorder(o) {
 }
 const norm = o => JSON.stringify(reorder(o));
 
+// Same rule the folder prune uses: a plugin carrying .vendor.json was vendored by
+// this script and is ours to remove; one without it is hand-authored.
+function isVendored(p) {
+  const dir = typeof p.source === 'string' && p.source.startsWith('./')
+    ? p.source.slice(2)
+    : path.join('plugins', p.name);
+  return fs.existsSync(path.join(dir, '.vendor.json'));
+}
+
 function buildEntry(name, local) {
   local = local || {};
   const up = upByName.get(name) || {};
@@ -239,9 +249,15 @@ for (const name of names) {
 }
 
 if (prune) {
-  const removed = mp.plugins.filter(p => p && p.name && !managed.has(p.name)).map(p => p.name);
+  const orphans = mp.plugins.filter(p => p && p.name && !managed.has(p.name));
+  const removed = orphans.filter(isVendored).map(p => p.name);
   for (const n of removed) console.log(`  - ${n}: pruned from catalog`);
-  if (removed.length) { changed += removed.length; if (!dry) mp.plugins = mp.plugins.filter(p => p && managed.has(p.name)); }
+  for (const p of orphans) if (!isVendored(p))
+    console.error(`  NOTE: "${p.name}" is hand-authored (no .vendor.json) — kept in ${catalog}.`);
+  if (removed.length) {
+    changed += removed.length;
+    if (!dry) mp.plugins = mp.plugins.filter(p => p && p.name && (managed.has(p.name) || !isVendored(p)));
+  }
 } else {
   for (const p of mp.plugins) if (p && p.name && !managed.has(p.name))
     console.error(`  NOTE: "${p.name}" is in ${catalog} but not in PLUGINS — left untouched (use --prune to remove).`);

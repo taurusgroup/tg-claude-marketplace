@@ -1,14 +1,20 @@
 {
   "name": "protect",
   "displayName": "Taurus-PROTECT",
-  "version": "0.1.0",
-  "description": "Local per-developer daemon exposing Taurus-PROTECT over MCP.",
+  "version": "0.2.0",
+  "description": "Taurus-PROTECT over MCP: local DEV daemon and the INT deployment.",
   "userConfig": {
-    "endpoint": {
+    "dev_endpoint": {
       "type": "string",
-      "title": "Taurus-PROTECT MCP endpoint",
-      "description": "Leave as-is for local DEV. INT is set centrally.",
+      "title": "Taurus-PROTECT MCP endpoint (local DEV)",
+      "description": "Local per-developer daemon. Include the /mcp path.",
       "default": "http://localhost:8090/mcp"
+    },
+    "int_endpoint": {
+      "type": "string",
+      "title": "Taurus-PROTECT MCP endpoint (INT)",
+      "description": "Supplied centrally via managed settings. Include the /mcp path.",
+      "default": "https://tg-protect-mcpd-da4bda3b678a1b21.int.t-dx.com/mcp"
     }
   }
 }

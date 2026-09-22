@@ -51,7 +51,7 @@
     {
       "name": "protect",
       "displayName": "Taurus-PROTECT",
-      "description": "Local per-developer daemon exposing Taurus-PROTECT over MCP.",
+      "description": "Taurus-PROTECT over MCP: local DEV daemon and the INT deployment.",
       "category": "development",
       "source": "./plugins/protect"
     }

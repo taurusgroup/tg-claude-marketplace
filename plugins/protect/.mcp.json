@@ -1,8 +1,15 @@
 {
   "mcpServers": {
-    "mcpd": {
+    "mcpd-dev": {
       "type": "http",
-      "url": "${user_config.endpoint}"
+      "url": "${user_config.dev_endpoint}"
+    },
+    "mcpd-int": {
+      "type": "http",
+      "url": "${user_config.int_endpoint}",
+      "oauth": {
+        "clientId": "taurus-protect-mcpd"
+      }
     }
   }
 }
