@@ -6,10 +6,7 @@
     },
     "mcpd-int": {
       "type": "http",
-      "url": "${user_config.int_endpoint}",
-      "oauth": {
-        "clientId": "taurus-protect-mcpd"
-      }
+      "url": "${user_config.int_endpoint}"
     }
   }
 }
