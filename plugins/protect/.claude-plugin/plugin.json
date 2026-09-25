@@ -1,7 +1,7 @@
 {
   "name": "protect",
   "displayName": "Taurus-PROTECT",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Taurus-PROTECT over MCP: local DEV daemon and the INT deployment.",
   "userConfig": {
     "dev_endpoint": {

@@ -1,10 +1,10 @@
 {
   "mcpServers": {
-    "mcpd-dev": {
+    "protect-dev": {
       "type": "http",
       "url": "${user_config.dev_endpoint}"
     },
-    "mcpd-int": {
+    "protect-int": {
       "type": "http",
       "url": "${user_config.int_endpoint}"
     }
