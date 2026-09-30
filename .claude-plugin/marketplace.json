@@ -54,6 +54,23 @@
       "description": "Taurus-PROTECT over MCP: local DEV daemon and the INT deployment.",
       "category": "development",
       "source": "./plugins/protect"
+    },
+    {
+      "name": "log-triage",
+      "displayName": "INT log triage",
+      "description": "Read-only INT log triage: OpenSearch aggregations and SELECT-only INT SQL, both through the credential-isolating proxies. Companion to the /review-logs and /investigate-log commands.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Taurus SA Engineering"
+      },
+      "category": "development",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/taurusgroup/tg-traded.git",
+        "path": "agent/mcp",
+        "ref": "master",
+        "sha": "43d08048dde438a73e2b43e91f1c7d6a421a5a0f"
+      }
     }
   ]
 }
