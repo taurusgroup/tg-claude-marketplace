@@ -1,0 +1,8 @@
+{
+  "name": "log-triage",
+  "version": "1.0.0",
+  "description": "Read-only INT log triage: OpenSearch aggregations and SELECT-only INT SQL, both through the credential-isolating proxies. Companion to the /review-logs and /investigate-log commands.",
+  "author": {
+    "name": "Taurus"
+  }
+}
