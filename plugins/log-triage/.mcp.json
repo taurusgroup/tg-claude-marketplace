@@ -1,0 +1,6 @@
+{
+  "triage": {
+    "command": "node",
+    "args": ["${CLAUDE_PLUGIN_ROOT}/triage-server.mjs"]
+  }
+}
